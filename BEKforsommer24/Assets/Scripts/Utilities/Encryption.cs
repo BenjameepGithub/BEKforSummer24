@@ -34,12 +34,12 @@ namespace Utilities {
             var keyBytes = Encoding.UTF8.GetBytes(EncryptionKey);
             var ivBytes = Encoding.UTF8.GetBytes(EncryptionIv);
             var cipherTextBytes = Convert.FromBase64String(cipherText);
-
+            
             using var aesAlg = Aes.Create();
             aesAlg.Key = keyBytes;
             aesAlg.IV = ivBytes;
             var cryptoTransform = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
-
+            
             using var msDecrypt = new MemoryStream(cipherTextBytes);
             using var csDecrypt = new CryptoStream(msDecrypt, cryptoTransform, CryptoStreamMode.Read);
             using var srDecrypt = new StreamReader(csDecrypt);

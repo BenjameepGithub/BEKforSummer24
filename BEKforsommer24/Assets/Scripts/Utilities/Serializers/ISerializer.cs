@@ -21,12 +21,8 @@
             FileExtension = _baseSerializer.FileExtension;
         }
         
-        public string Serialize<T>(T obj) {
-            return _baseSerializer.Serialize(obj).Encrypted();
-        }
+        public string Serialize<T>(T obj) => _baseSerializer.Serialize(obj).Encrypted();
         
-        public T Deserialize<T>(string fileText) {
-            return _baseSerializer.Deserialize<T>(fileText.Decrypted());
-        }
+        public T Deserialize<T>(string fileText) => _baseSerializer.Deserialize<T>(fileText.Decrypted());
     }
 }
