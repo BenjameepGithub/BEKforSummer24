@@ -6,7 +6,7 @@ namespace Utilities {
     }
     
     /// <summary>
-    /// Defines a class as being able to visit IVisitable objects. Add additional "Visit" methods to inherted classes
+    /// Defines a class as being able to visit IVisitable objects. Add additional "Visit" methods to inherited classes
     /// that are IVisitable by the Visitor
     /// </summary>
     /// <typeparam name="TVisitable">Type of the IVisitable interface</typeparam>
